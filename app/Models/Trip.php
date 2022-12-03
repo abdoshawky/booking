@@ -13,6 +13,16 @@ class Trip extends Model
 
     public function stations()
     {
-        return $this->belongsToMany(Station::class, 'trip_station');
+        return $this->belongsToMany(Station::class, 'trip_station')->orderBy('order');
+    }
+
+    public function bus()
+    {
+        return $this->belongsTo(Bus::class);
+    }
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
     }
 }
