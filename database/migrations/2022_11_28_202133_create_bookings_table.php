@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->foreignId('trip_id')->constrained();
             $table->foreignId('seat_id')->constrained();
-            $table->foreignId('start_station_id')->constrained('stations');
-            $table->foreignId('end_station_id')->constrained('stations');
+            $table->foreignId('station_id')->constrained('stations');
+            $table->boolean('is_end_station');
             $table->timestamps();
         });
     }
