@@ -18,8 +18,7 @@ class BookingResource extends JsonResource
         return [
             'id' => $this->id,
             'seat' => SeatResource::make($this->seat),
-            'startStation' => StationResource::make($this->startStation),
-            'endStation' => StationResource::make($this->endStation),
+            'station' => StationResource::make($this->station),
         ];
     }
 }

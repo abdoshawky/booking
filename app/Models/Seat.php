@@ -10,4 +10,9 @@ class Seat extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 }

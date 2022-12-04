@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('trips', [TripController::class, 'getTrips']);
+Route::get('trips/{trip}/seats', [TripController::class, 'getTripAvailableSeats']);
 Route::post('trips/{trip}/bookings', [TripController::class, 'bookTripSeat'])->middleware('auth:sanctum');
